@@ -1,0 +1,355 @@
+@import "./mixins.scss";
+
+.headerContainer {
+    background-color: white;
+    height: 110px;
+
+
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            align-items: center;
+            height: 80px;
+
+            .logo {
+
+                img {
+                    width: 50px;
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+
+            input {
+                border: none;
+                width: 100%;
+                outline: none;
+                padding: 15px 5px;
+                font-size: 2.1rem;
+                color: #494a4a;
+
+                @include md {
+                    width: 180px;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+
+            button {
+                border: none;
+                padding: 10px 30px;
+                font-size: 1.5rem;
+                background-color: #673AB7;
+                border-radius: 6px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .center {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 10px;
+
+
+        li {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #494a4a;
+            letter-spacing: .5px;
+            position: relative;
+            transition: all .3s ease;
+            text-align: center;
+
+            &:hover::after {
+                content: "";
+                height: 3px;
+                width: 70px;
+                background-color: #673AB7;
+                border-radius: 15px;
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+                transition: all .3s ease;
+                text-align: center;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+    }
+
+}
+
+.formContainer {
+    margin-top: 30px;
+    height: 100vh;
+    position: relative;
+    .formContent {
+        max-width: 700px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+
+        .formTitle {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: white;
+            width: 100%;
+            .formBorder {
+                height: 8px;
+                background-color: #673AB7;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+            }
+
+            .titleText {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 25px;
+                width: 100%;
+                input {
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    padding: 0 10px;
+                    font-size: 2.4rem;
+
+                    @include md {
+                        width: 300px;
+                    }
+
+                    border-bottom: .5px solid rgb(193, 193, 193);
+                    padding-bottom: 15px;
+
+                }
+
+                textarea {
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    padding: 0 10px;
+                    font-size: 1.5rem;
+                    font-family: Arial, Helvetica, sans-serif;
+
+                    @include md {
+                        width: 500px;
+                    }
+
+                    border-bottom: .5px solid rgb(193, 193, 193);
+                }
+
+
+            }
+        }
+
+        .formControlBtn {
+            background-color: white;
+            border-radius: 6px;
+            position: fixed;
+           bottom: 0;
+           display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            // align-items: center;
+
+            @include md {
+                right: 350px;
+                bottom: 400px;
+                flex-direction: column;
+                // align-items: flex-start;
+            }
+
+            li {
+                padding: 3px 8px;
+                color: #494a4a;
+                font-size: 3rem;
+                cursor: pointer;
+                text-align: center;
+            }
+        }
+
+        .formArea {
+            display: flex;
+            margin-top: 30px;
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+
+            .sideBorder {
+                width: 6px;
+                // height: 100%;
+                background: #4285F4;
+                z-index: 99;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .formAreaContent {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px;
+
+                .formText {
+
+                    display: flex;
+                    gap: 20px;
+                    flex-grow: 1;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    @include md {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                    }
+
+
+                    .col1 {
+                        input {
+                            border: none;
+                            width: 100%;
+                            outline: none;
+                            padding: 10px;
+                            font-size: 2rem;
+                            background-color: rgb(243, 243, 243);
+
+                            @include md {
+                                width: 280px;
+                            }
+                        }
+
+                        ::placeholder {
+                            font-size: 1.5rem;
+                        }
+
+                        border-bottom: .5px solid rgb(227, 227, 227);
+                        padding-bottom: 10px;
+                    }
+
+                    .col2 {
+                        height: 40px;
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+
+                        .file {
+                            font-size: 3rem;
+                            cursor: pointer;
+                        }
+
+                        select {
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+
+                .answerArea {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    input {
+                        padding: 10px;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        font-size: 1.6rem;
+                        border-bottom: .5px solid rgb(227, 227, 227);
+
+                        @include md {
+                            width: 250px;
+
+                        }
+
+                    }
+
+                    textarea {
+                        width: 90%;
+                        border: none;
+                        outline: none;
+                        font-size: 1.8rem;
+                        padding: 0 10px;
+                        border-bottom: .5px solid rgb(227, 227, 227);
+                        padding-bottom: 8px;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                    ::placeholder {
+                        font-size: 1.4rem;
+                    }
+
+                    .multipleChoice {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        flex-direction: column;
+                        gap: 10px;
+
+                        // border: 1px solid black;
+                        span {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            text-align: left;
+
+                            .radio {
+                                width: 20px;
+                            }
+
+                            input {
+                                width: 90%;
+                                border: none;
+                                outline: none;
+                                padding: 5px;
+                                font-size: 1.6rem;
+
+                                @include md {
+                                    width: 330px;
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 60px;
+                            border: none;
+                            outline: none;
+                            padding: 5px 10px;
+                            background-color: #673AB7;
+                            color: white;
+                            border-radius: 5px;
+                            cursor: pointer;
+
+                        }
+                    }
+                }
+            }
+        }
+        .subBtn{
+            border: none;
+            outline: none;
+            padding: 7px 30px;
+            background-color: #673AB7;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+    }
+}
