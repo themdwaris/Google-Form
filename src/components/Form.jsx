@@ -3,7 +3,7 @@ import FormSection from "./FormSection";
 import { useYourContext } from "../context/context";
 
 const Form = () => {
-  const { elem, setElem, option } = useYourContext();
+  const { elem, setElem, option,setActive } = useYourContext();
   const addHandler = () => {
     let items = [...elem, []];
     setElem(items);
@@ -25,7 +25,10 @@ const Form = () => {
           })}
         </div>
         <ul className="formControlBtn">
-          <li onClick={addHandler}>+</li>
+          <li onClick={()=>{
+            addHandler()
+            setActive(false)
+          }}>+</li>
           <li>+</li>
           <li>+</li>
         </ul>

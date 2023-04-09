@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useYourContext } from "../context/context";
 
 const FormSection = ({ i }) => {
-  const { option, setOption, select, setSelect, elem, setElem } =
+  const { option, setOption, select, setSelect,active,setActive } =
     useYourContext();
-
+  
   const onChangeHandler = (e) => {
     // const inputData = [...elem]
     // inputData[i]=e.target.value
@@ -29,7 +29,7 @@ const FormSection = ({ i }) => {
   };
   console.log(option);
   return (
-    <div className="formArea">
+    <div className="formArea" onClick={()=>setActive(true)}>
       <div className="sideBorder"></div>
       <div className="formAreaContent">
         <div className="formText">
@@ -41,7 +41,8 @@ const FormSection = ({ i }) => {
               name="question"
             />
           </div>
-          <div className="col2">
+          {active&&(
+            <div className="col2">
             <div className="file">+</div>
 
             <select name="option" id="option" onChange={onChangeHandler}>
@@ -51,6 +52,7 @@ const FormSection = ({ i }) => {
               <option value="checkboxes">Checkboxes</option>
             </select>
           </div>
+          )}
         </div>
         <div className="answerArea">
           {select === "shortAnswer" ? (
